@@ -1,8 +1,8 @@
 /* General Styles */
 :root {
     --primary-color: #FDF0E9; /* Ivory */
-    /* --secondary-color: #ab0545; Blush Pink */
-    --accent-color: #ab0545; /* Soft Black */
+    --secondary-color: #F5C6D8; /* Blush Pink */
+    --accent-color: #333333; /* Soft Black */
     --text-color: #595959; /* Soft Gray */
     --header-font: 'Playfair Display', serif;
     --body-font: 'Inter', sans-serif;
@@ -19,16 +19,7 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
-    width: 100%;
-    text-align: center;
-
 }
-html {
-    overflow-x: hidden;
-    width: 100%;
-}
-
 
 h1, h2 {
     font-family: var(--header-font);
@@ -36,9 +27,54 @@ h1, h2 {
 }
 
 a {
-    text-decoration: none!important;
-    /* color: var(--accent-color)!important; */
+    text-decoration: none;
+    color: var(--accent-color);
 }
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(253, 240, 233, 0.9);
+    z-index: 1000;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--secondary-color);
+}
+
+
+
 
 .services {
   padding: 60px 20px;
@@ -259,10 +295,7 @@ a:hover {
   color: orangered;
 }
 
-.logo-img {
-     width: 140px;
-    height: 40px;
-}
+
 
 
 
