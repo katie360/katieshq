@@ -1,3 +1,19 @@
+---
+layout: post
+title: "Understanding Capital Markets – A Focus on Options"
+author: "Kate Ratemo"
+date: 2025-06-30 10:00:00 +0300
+categories: [finance, investing]
+tags: [capital markets, options, investing, derivatives, strategy, beginners]
+image:
+  path: /assets/images/cmarkets.jpg
+  alt: "Illustration of options trading in capital markets"
+author_image:
+  path: /assets/images/cmarket.jpg
+description: "A beginner-friendly breakdown of capital markets with a spotlight on options — what they are, how they work, and why they matter."
+excerpt_separator: <!--more-->
+---
+
 # Understanding Capital Markets - A Focus on Options
 
 ## What Are Capital Markets?

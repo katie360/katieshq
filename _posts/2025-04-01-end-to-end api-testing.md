@@ -8,6 +8,8 @@ tags: [e2e, postman, automation, devtools]
 image:
   path: /assets/images/end-to-end-testing.jpg
   alt: "Illustration of end-to-end testing concept"
+author_image:
+   path: /assets/images/headshot.png
 description: "A deep dive into end-to-end API testing, tools, strategies, and how to make it reliable for modern development teams."
 excerpt_separator: <!--more-->
 ---

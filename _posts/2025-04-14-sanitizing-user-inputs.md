@@ -1,3 +1,19 @@
+---
+layout: post
+title: "Input Sanitization"
+author: "Kate Ratemo"
+date: 2025-06-30 12:00:00 +0300
+categories: [security, webdev]
+tags: [input-validation, sanitization, xss, sql-injection, secure-coding]
+image:
+  path: /assets/images/sanitize.png
+  alt: "Illustration of input sanitization with a shield and code symbols"
+author_image:
+  path: /assets/images/headshot.png
+description: "Learn the importance of input sanitization in preventing common security threats like XSS and SQL injection, plus how to apply it effectively in your code."
+excerpt_separator: <!--more-->
+---
+
 # Input Sanitization.
 
 When developing a secure web app, one of the most critical steps is sanitizing user inputs. Think of user inputs  like search bars, forms, or APIs ,as doorways into your application. Without proper sanitization, you're leaving those doors wide open. Any point where users can send data into your system represents a potential attack vector.

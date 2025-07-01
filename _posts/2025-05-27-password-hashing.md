@@ -1,5 +1,18 @@
-# Password Hashing 
-
+---
+layout: post
+title: "Password Hashing"
+author: "Kate Ratemo"
+date: 2025-06-28 10:00:00 +0300
+categories: [security, backend]
+tags: [hashing, passwords, encryption, csharp, cybersecurity, salting, best-practices]
+image:
+  path: /assets/images/hashing.png
+  alt: "Visual illustration of password hashing with code and lock"
+author_image:
+  path: /assets/images/headshot.png
+description: "Understand how password hashing works, why it's important, and how to securely implement it in C#. Learn about salting, SHA-256, and real-world security practices."
+excerpt_separator: <!--more-->
+---
 
 ## So, What Is Hashing?
 

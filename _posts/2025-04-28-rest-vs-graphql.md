@@ -1,3 +1,19 @@
+---
+layout: post
+title: "REST APIs vs GraphQL"
+author: "Kate Ratemo"
+date: 2025-06-30 11:30:00 +0300
+categories: [api, webdev]
+tags: [rest, graphql, apis, web, backend, architecture]
+image:
+  path: /assets/images/GvsR.webp
+  alt: "Comparison diagram between REST APIs and GraphQL"
+author_image:
+  path: /assets/images/headshot.png
+description: "Explore the key differences between REST and GraphQL APIs — when to use each, how they work, and which suits your project's needs best."
+excerpt_separator: <!--more-->
+---
+
 # REST APIs vs GraphQL
 
 If you’ve spent any time building or using web applications, you’ve probably heard about REST APIs. But in recent years, there’s been a lot of buzz around something called GraphQL. If you’re wondering what these are, how they’re different, and which one you should use for your next project, you’re in the right place.

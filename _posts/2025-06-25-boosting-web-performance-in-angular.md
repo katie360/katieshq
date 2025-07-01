@@ -1,3 +1,20 @@
+---
+layout: post
+title: "Boosting Web Performance in Angular"
+author: "Kate Ratemo"
+date: 2025-06-25 10:00:00 +0300
+categories: [performance, angular]
+tags: [web, performance, angular, optimization, lazy-loading, lighthouse]
+image:
+  path: /assets/images/angular-performance.jpg
+  alt: "Illustration of Angular performance optimization"
+author_image:
+  path: /assets/images/headshot.png
+description: "Practical techniques to make your Angular apps load faster, perform better, and delight users — from lazy loading to build optimization."
+excerpt_separator: <!--more-->
+---
+
+
 # Boosting Web Performance in Angular
 
 As technology continues to advance, web users don’t have the patience for slow-loading applications. Achieving top-tier performance isn’t just about writing clean code; it’s about knowing and applying the right techniques and tools to boost your app’s speed and responsiveness.

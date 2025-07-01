@@ -1,15 +1,111 @@
 ---
 layout: default
 ---
-<div style="padding-top: 120px; min-height: 80vh;">
-<article class="post">
-  <header class="post-header">
-    <h1 class="post-title" style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">{{ page.title | escape }}</h1>
-    <p class="post-meta" style="text-align: center; margin-bottom: 3rem;">{{ page.date | date: "%B %d, %Y" }}</p>
-  </header>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
-</article>
+<div class="post-page" style="min-height: 80vh; padding: 2rem 1rem;">
+  <article class="post-card" style="max-width: 90%; margin: 0 auto;">
+    {% if page.image %}
+      <img class="post-featured-img" 
+           src="{{ page.image.path | relative_url }}" 
+           alt="{{ page.image.alt | default: 'Featured image for ' | append: page.title }}"
+           style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 2rem;">
+    {% endif %}
+
+    <header class="post-header">
+      <div class="post-meta" style="color: #888; font-size: 0.9rem; margin-bottom: 1rem;">
+
+  <span class="post-date">
+    <i class="fas fa-calendar-alt" style="margin-right: 4px;"></i>
+    {{ page.date | date: "%B %d, %Y" }}
+  </span>
+
+  {% if page.author %}
+    &nbsp; | &nbsp;
+    <span class="post-author">
+       <i class="fas fa-user" style="margin-right: 4px;"></i>
+      {{ page.author }}
+    </span>
+  {% endif %}
+
+  {% if page.tags %}
+    &nbsp; | &nbsp;
+    <span class="post-tags">
+      {% for tag in page.tags %}
+        <span class="post-category">{{ tag }}</span>
+      {% endfor %}
+    </span>
+  {% endif %}
+
 </div>
+
+      <h1 class="post-title" style="font-family: 'Playfair Display', serif; margin-top: 1rem;">{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="post-content" style="font-family: 'Inter', sans-serif; line-height: 1.7; font-size: 1rem; margin-top: 2rem;">
+      {{ content }}
+    </div>
+  </article>
+</div>
+
+<!-- Highlight.js for syntax highlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- Optional: ClipboardJS for copy buttons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('pre code').forEach((block) => {
+    const button = document.createElement('button');
+    button.innerText = 'Copy';
+    button.className = 'copy-btn';
+    button.style = 'position: absolute; right: 1rem; top: 1rem;';
+    const wrapper = document.createElement('div');
+    wrapper.style = 'position: relative;';
+    block.parentNode.insertBefore(wrapper, block);
+    wrapper.appendChild(block);
+    wrapper.appendChild(button);
+
+    const clipboard = new ClipboardJS(button, {
+      target: () => block
+    });
+
+    clipboard.on('success', () => {
+      button.innerText = 'Copied!';
+      setTimeout(() => button.innerText = 'Copy', 2000);
+    });
+  });
+});
+</script>
+
+<style>
+.copy-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.copy-btn:hover {
+  background-color: #555;
+}
+blockquote {
+  border-left: 4px solid #ab0545;
+  padding-left: 1rem;
+  color: #555;
+  margin: 1rem 0;
+  font-style: italic;
+}
+pre code {
+  background: #f4f4f4;
+  padding: 1rem;
+  display: block;
+  overflow-x: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+</style>

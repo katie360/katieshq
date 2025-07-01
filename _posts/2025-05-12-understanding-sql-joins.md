@@ -1,3 +1,19 @@
+---
+layout: post
+title: "Understanding SQL JOINs"
+author: "Kate Ratemo"
+date: 2025-06-30 11:00:00 +0300
+categories: [backend, databases]
+tags: [sql, joins, database, backend, tutorial, queries]
+image:
+  path: /assets/images/joins.png
+  alt: "Diagram illustrating SQL JOIN types"
+author_image:
+  path: /assets/images/headshot.png
+description: "Master SQL JOINs — from INNER and LEFT to RIGHT and FULL. Learn how to combine tables effectively with real-world examples and diagrams."
+excerpt_separator: <!--more-->
+---
+
 # Understanding SQL JOINs
 When working with relational databases, data is often broken down into different tables, each focusing on a specific type of information. These tables are connected through relationships, making it easier to organize and manage large datasets. To pull data from these tables and make sense of it, we use SQL, the language that allows us to query, update, and combine information across multiple tables.
 

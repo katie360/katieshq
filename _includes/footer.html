@@ -1,8 +1,35 @@
 <footer>
-    <div class="social-icons">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
+  <div class="container">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>From My Desk</h3>
+        <p><i>Currently refining this space to better reflect my work.
+            Thanks for your patience if you notice any quirks 😉</i></p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/portfolio.html">Projects</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Let’s Connect</h3>
+        <p>I love collaborating and sharing ideas. Got a project or just want to say hi?</p>
+        <a href="mailto:yourname@example.com" class="btn btn-action" style="width: 100%; margin-top: 0.5rem;">Email Me</a>
+      </div>
     </div>
-    <p>&copy; 2024 Kate Ratemo. All rights reserved.</p>
+    <div class="copyright">
+      <p>&copy; <span id="current-year"></span> Kate Ratemo. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
+<script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>

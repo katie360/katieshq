@@ -1,0 +1,61 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+paginate: 4
+paginate_path: "/blog/page:num/"
+---
+
+<div class="blog-page" style="padding-top: 50px; min-height: 80vh;">
+  <section class="blog-hero">
+    <h1 class="blog-title">Welcome to My Blog!</h1>
+    <p class="blog-subtitle">This is where I share what I’m building, learning, and loving in tech, leadership, and creative work. Take a look around!</p>
+  </section>
+
+  <section class="all-posts-section">
+    <h2 class="section-title">All Blog Posts</h2>
+    <div class="wrapper">
+      {% if paginator.posts %}
+        {% for post in paginator.posts %}
+          <div class="card">
+            <div class="card-banner">
+              <p class="category-tag popular">
+                {{ post.categories[0] | capitalize }}
+              </p>
+              <img class="banner-img" 
+                src="{{ post.image.path | default: '/assets/images/default.jpg' | relative_url }}" 
+                alt="{{ post.image.alt | default: 'Blog thumbnail' }}">
+            </div>
+            <div class="card-body">
+              <p class="blog-hashtag">
+                {% assign limited_tags = post.tags | slice: 0, 3 %}
+                {% for tag in limited_tags %}
+                  <a href="{{ '/tags/' | append: tag | relative_url }}" class="post-category sm">{{ tag }}</a>
+                {% endfor %}
+              </p>
+              <h2 class="blog-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h2>
+              <p class="blog-description">
+                {{ post.excerpt | strip_html | truncatewords: 20 }}
+              </p>
+              <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No posts found.</p>
+      {% endif %}
+    </div>
+
+    <div class="pagination" style="margin-top: 2rem; text-align: center;">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="prev-page">&laquo; Previous</a>
+      {% endif %}
+      <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="next-page">Next &raquo;</a>
+      {% endif %}
+    </div>
+  </section>
+</div>
