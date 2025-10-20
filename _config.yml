@@ -35,8 +35,12 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
-paginate: 4 # or however many posts you want per page
+paginate: 3 # Show 6 posts per page
 paginate_path: "/blog/page:num/"
+collections:
+  projects:
+    output: true
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

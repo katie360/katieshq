@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<div class="post-page" style="min-height: 80vh; padding: 2rem 1rem;">
-  <article class="post-card" style="max-width: 90%; margin: 0 auto;">
+<div class="post-page" style="min-height: 80vh; padding: 2rem 1rem;    margin-bottom: 20px;">
+  <article class="post-card" style="max-width: 90%; margin: 0 auto;padding:20px;">
     {% if page.image %}
       <img class="post-featured-img" 
            src="{{ page.image.path | relative_url }}" 
@@ -12,7 +12,7 @@ layout: default
     {% endif %}
 
     <header class="post-header">
-      <div class="post-meta" style="color: #888; font-size: 0.9rem; margin-bottom: 1rem;">
+      <div class="post-meta" style="color: #888; font-size: 0.8rem; margin: 1rem;">
 
   <span class="post-date">
     <i class="fas fa-calendar-alt" style="margin-right: 4px;"></i>
@@ -20,7 +20,7 @@ layout: default
   </span>
 
   {% if page.author %}
-    &nbsp; | &nbsp;
+   
     <span class="post-author">
        <i class="fas fa-user" style="margin-right: 4px;"></i>
       {{ page.author }}
@@ -28,7 +28,7 @@ layout: default
   {% endif %}
 
   {% if page.tags %}
-    &nbsp; | &nbsp;
+    
     <span class="post-tags">
       {% for tag in page.tags %}
         <span class="post-category">{{ tag }}</span>
@@ -38,10 +38,10 @@ layout: default
 
 </div>
 
-      <h1 class="post-title" style="font-family: 'Playfair Display', serif; margin-top: 1rem;">{{ page.title | escape }}</h1>
+      <h1 class="post-title" >{{ page.title | escape }}</h1>
     </header>
 
-    <div class="post-content" style="font-family: 'Inter', sans-serif; line-height: 1.7; font-size: 1rem; margin-top: 2rem;">
+    <div class="post-content" style=" font-size: 0.9rem;">
       {{ content }}
     </div>
   </article>

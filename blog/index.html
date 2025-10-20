@@ -1,9 +1,6 @@
 ---
 layout: default
 title: Blog
-permalink: /blog/
-paginate: 4
-paginate_path: "/blog/page:num/"
 ---
 
 <div class="blog-page" style="padding-top: 50px; min-height: 80vh;">
@@ -11,10 +8,15 @@ paginate_path: "/blog/page:num/"
     <h1 class="blog-title">Welcome to My Blog!</h1>
     <p class="blog-subtitle">This is where I share what I’m building, learning, and loving in tech, leadership, and creative work. Take a look around!</p>
   </section>
+  
 
   <section class="all-posts-section">
     <h2 class="section-title">All Blog Posts</h2>
-    <div class="wrapper">
+    <form class="blog-search-filter" style="margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem;">
+      <label for="blog-search" style="display:none">Search posts</label>
+      <input id="blog-search" class="blog-search-input" type="text" placeholder="Search posts..." oninput="filterBlogPosts()" autocomplete="off" style="padding:0.6rem 1rem; border-radius:1.2rem; border:1px solid #ccc; min-width:220px;" />
+    </form>
+    <div class="blog-posts">
       {% if paginator.posts %}
         {% for post in paginator.posts %}
           <div class="card">
@@ -48,14 +50,24 @@ paginate_path: "/blog/page:num/"
       {% endif %}
     </div>
 
-    <div class="pagination" style="margin-top: 2rem; text-align: center;">
+    <div class="pagination" style="margin-top: 2rem; text-align: center; display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;">
       {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="prev-page">&laquo; Previous</a>
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-arrow prev-page">&laquo; Prev</a>
       {% endif %}
-      <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+          <span class="pagination-page current">{{ page }}</span>
+        {% elsif page == 1 %}
+          <a href="/blog/" class="pagination-page">1</a>
+        {% else %}
+          <a href="{{ paginator.paginate_path | replace: ':num', page }}" class="pagination-page">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
       {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}" class="next-page">Next &raquo;</a>
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-arrow next-page">Next &raquo;</a>
       {% endif %}
     </div>
+    <script src="/js/filterBlogPosts.js"></script>
   </section>
+  {% include explore-category.html %}
 </div>
